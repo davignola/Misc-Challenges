@@ -1,0 +1,2 @@
+H,B,N,B,H,N,H,B,N
+garbage
