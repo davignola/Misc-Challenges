@@ -87,7 +87,7 @@ with open(filePath, 'r') as file:
 
     # Output
     print(
-        f'Cunsumption steps : {["%.2f"%item for item in consuptionSteps]}\n' +
+        f'Consumption steps : {["%.2f"%item for item in consuptionSteps]}\n' +
         f'Barrel used : {barrels}\n' +
         f'Total KMs : {len(route)*100}\n' +
         f'Total Consumed L : {totalConsumption:.4f}\n' +
