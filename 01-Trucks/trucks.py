@@ -43,6 +43,16 @@ def getConsumption(step: str, isLoaded: bool):
     return stepConsumption + (stepConsumption * (LOADED_FACTOR if isLoaded else UNLOADED_FACTOR))
 
 
+def flipStep(step: str):
+    "Flip the step dirrection for the return travel"
+    if step == 'H':
+        return 'B'
+    elif step == 'B':
+        return 'H'
+    else:
+        return step
+
+
 def errorAndExit():
     print('Invalid file or file not found\n\nUsage : trucks.py path/to/file')
     exit(1)
@@ -74,7 +84,7 @@ with open(filePath, 'r') as file:
     loadedSteps = len(route)
 
     # Get the full route
-    route = route + route[::-1]
+    route = route + [flipStep(x) for x in route[::-1]]
 
     # Get the total consumption
     consuptionSteps = [getConsumption(x, i < loadedSteps)
