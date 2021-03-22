@@ -82,8 +82,8 @@ with open(filePath, 'r') as file:
 
     totalConsumption = sum(consuptionSteps)
 
-    # Get the barrel count
-    barrels = ceil((totalConsumption - STARTING_FUEL) / BARREL_FUEL)
+    # Get the barrel count, if needed
+    barrels = max(ceil((totalConsumption - STARTING_FUEL) / BARREL_FUEL), 0)
 
     # Output
     print(
